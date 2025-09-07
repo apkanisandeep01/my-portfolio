@@ -30,6 +30,10 @@ body {
     line-height: 1.6;
 }
 
+body.nav-open {
+    overflow: hidden; /* Prevent background scroll when menu is open */
+}
+
 main {
     padding-top: var(--header-height);
 }
@@ -120,7 +124,8 @@ header nav {
     gap: 3rem;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    padding: 2rem; /* Added padding for spacing */
+    padding: 2rem; 
+    z-index: 999;
 }
 
 .nav-links.nav-active {
@@ -161,6 +166,25 @@ header nav {
     transform-origin: 1px;
 }
 
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.nav-overlay.nav-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 /* --- Desktop Navigation --- */
 @media (min-width: 768px) {
     .logo {
@@ -183,6 +207,9 @@ header nav {
         color: var(--text-color);
         font-size: 1rem;
     }
+    .nav-overlay {
+        display: none;
+    }
 }
 
 
@@ -194,7 +221,7 @@ header nav {
   justify-content: center;
   text-align: center;
   background: linear-gradient(to right, #f9f9f9, #eaf3ff);
-  padding: 4rem 1.5rem; /* Adjusted padding */
+  padding: 4rem 1.5rem; 
 }
 
 .hero-content {
@@ -217,7 +244,7 @@ header nav {
 .hero-h2 {
   font-size: 1.2rem;
   margin: 10px 0;
-  height: 1.8rem; /* Reserve space for typed text */
+  height: 1.8rem; 
 }
 
 .hero-p {
@@ -234,7 +261,7 @@ header nav {
 
 @media (min-width: 768px) {
     .hero {
-        padding: 6rem 1.5rem; /* More padding on desktop */
+        padding: 6rem 1.5rem;
     }
     .profile-pic {
         width: 150px;
