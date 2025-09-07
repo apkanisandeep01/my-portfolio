@@ -28,7 +28,7 @@ body {
     background-color: var(--white-color);
     color: var(--text-color);
     line-height: 1.6;
-    font-size: 16px; /* Set a base font size */
+    font-size: 16px; 
 }
 
 body.nav-open {
@@ -42,7 +42,7 @@ main {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem; /* Slightly reduced padding for mobile */
+    padding: 0 1rem; 
 }
 
 /* --- Section Styling --- */
@@ -224,7 +224,7 @@ header nav {
   justify-content: center;
   text-align: center;
   background: linear-gradient(to right, #f9f9f9, #eaf3ff);
-  padding: 5rem 1rem; /* A fixed padding for mobile to prevent extra space */
+  padding: 5rem 1rem; 
 }
 
 .hero-content {
@@ -232,7 +232,7 @@ header nav {
 }
 
 .profile-pic {
-  width: 120px; /* Adjusted size for mobile */
+  width: 120px; 
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
@@ -240,12 +240,12 @@ header nav {
 }
 
 .hero-h1 {
-  font-size: 1.8rem; /* Readable font size on mobile */
+  font-size: 1.8rem; 
   margin: 10px 0;
 }
 
 .hero-h2 {
-  font-size: 1.1rem; /* Readable font size on mobile */
+  font-size: 1.1rem; 
   margin: 10px 0;
   height: 1.6rem; 
 }
@@ -259,13 +259,16 @@ header nav {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  flex-wrap: wrap; 
 }
 
+/*******************************************/
+/* THIS IS THE FIX FOR THE DESKTOP HERO    */
+/*******************************************/
 @media (min-width: 768px) {
     .hero {
-        padding: 6rem 1.5rem;
-        min-height: calc(100vh - var(--header-height)); /* Restore full-screen feel only on desktop */
+        /* I have removed min-height. The height is now controlled ONLY by padding. */
+        padding: 8rem 1.5rem; 
     }
     .profile-pic {
         width: 150px;
@@ -282,16 +285,16 @@ header nav {
 /* --- Buttons --- */
 .btn {
     text-decoration: none;
-    font-weight: 600; /* Slightly less bold */
+    font-weight: 600; 
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    justify-content: center; /* Center content */
+    justify-content: center; 
     gap: 0.5rem;
     font-size: 0.9rem;
-    flex-shrink: 0; /* Prevent buttons from shrinking */
+    flex-shrink: 0; 
 }
 @media (min-width: 768px) {
     .btn {
