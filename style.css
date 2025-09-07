@@ -189,10 +189,6 @@ header nav {
 }
 
 
-/*******************************************/
-/* THIS IS THE FIX FOR THE NAV BAR         */
-/*******************************************/
-/* The breakpoint is now larger, so the hamburger menu stays on tablets */
 @media (min-width: 992px) {
     .logo {
         font-size: 1.5rem;
@@ -306,7 +302,7 @@ header nav {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
-.btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+.btn-primary { background-color: var(--primary-color); color: var(--white-color); border: none; cursor: pointer; }
 .btn-primary:hover { background-color: #2563eb; }
 .btn-secondary { background-color: var(--secondary-color); color: var(--white-color); }
 .btn-secondary:hover { background-color: #ea580c; }
@@ -442,18 +438,15 @@ header nav {
     font-weight: 700;
     font-size: 1rem;
 }
-/*******************************************/
-/* THIS IS THE FIX FOR THE JOURNEY TEXT    */
-/*******************************************/
 .timeline-item h3 { 
     font-size: 1.25rem; 
     font-weight: 700; 
     margin-top: 0.25rem; 
-    color: var(--white-color); /* Bright white color */
+    color: var(--white-color);
 }
 .timeline-item h4 { 
     font-size: 1rem; 
-    color: #93c5fd; /* Light blue color to match the date */
+    color: #93c5fd;
 }
 .timeline-item p { 
     margin-top: 0.5rem; 
@@ -511,6 +504,7 @@ header nav {
     max-width: 800px;
     margin: 0 auto;
 }
+
 
 /* --- Footer --- */
 footer {
