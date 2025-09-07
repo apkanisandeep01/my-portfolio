@@ -239,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.add('nav-open');
         navLinks.classList.add('nav-active');
         navOverlay.classList.add('nav-active');
-        // Push a state to history
         history.pushState({menuOpened: true}, null);
     }
 
@@ -252,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
         if (body.classList.contains('nav-open')) {
-            history.back(); // This will trigger the popstate event to close the menu
+            history.back();
         } else {
             openMenu();
         }
@@ -264,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close menu when a link is clicked
     navLinks.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
             if (body.classList.contains('nav-open')) {
@@ -273,7 +271,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Listen for the back button
     window.addEventListener('popstate', (e) => {
         if (body.classList.contains('nav-open')) {
             closeMenu();
