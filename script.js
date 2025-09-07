@@ -232,17 +232,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Mobile Navigation (Hamburger Menu) ---
     const hamburger = document.getElementById('hamburger-button');
     const navLinks = document.getElementById('nav-links-container');
-    
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const body = document.body;
+
+    function openMenu() {
+        body.classList.add('nav-open');
+        navLinks.classList.add('nav-active');
+        navOverlay.classList.add('nav-active');
+        // Push a state to history
+        history.pushState({menuOpened: true}, null);
+    }
+
+    function closeMenu() {
+        body.classList.remove('nav-open');
+        navLinks.classList.remove('nav-active');
+        navOverlay.classList.remove('nav-active');
+    }
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (body.classList.contains('nav-open')) {
+            history.back(); // This will trigger the popstate event to close the menu
+        } else {
+            openMenu();
+        }
+    });
+
+    navOverlay.addEventListener('click', () => {
+        if (body.classList.contains('nav-open')) {
+            history.back();
+        }
     });
 
     // Close menu when a link is clicked
-    const allNavLinks = document.querySelectorAll('#nav-links-container li a');
-    allNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('nav-active');
-        })
+    navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            if (body.classList.contains('nav-open')) {
+               history.back();
+            }
+        }
+    });
+
+    // Listen for the back button
+    window.addEventListener('popstate', (e) => {
+        if (body.classList.contains('nav-open')) {
+            closeMenu();
+        }
     });
 
 
