@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // =================================================================
     // PORTFOLIO DATA
-    // To update your portfolio, just edit the information in this object.
     // =================================================================
     const portfolioData = {
         navLinks: [
@@ -72,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // =================================================================
     // DYNAMIC CONTENT RENDERING FUNCTIONS
-    // These functions build the HTML from the data object above.
     // =================================================================
-    
     function renderNavLinks() {
         const container = document.getElementById('nav-links-container');
         if (!container) return;
@@ -229,12 +226,29 @@ document.addEventListener('DOMContentLoaded', function() {
     renderAll();
     
     // =================================================================
-    // ORIGINAL ANIMATION AND EVENT LISTENER CODE
+    // EVENT LISTENERS AND ANIMATIONS
     // =================================================================
+
+    // --- Mobile Navigation (Hamburger Menu) ---
+    const hamburger = document.getElementById('hamburger-button');
+    const navLinks = document.getElementById('nav-links-container');
+    
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+    });
+
+    // Close menu when a link is clicked
+    const allNavLinks = document.querySelectorAll('#nav-links-container li a');
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('nav-active');
+        })
+    });
+
 
     // --- Animated Typing Effect ---
     const typedTextSpan = document.getElementById('typed-text');
-    const textArray = portfolioData.hero.typedText; // Using data from our object
+    const textArray = portfolioData.hero.typedText;
     let textArrayIndex = 0;
     let charIndex = 0;
 
@@ -270,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Optional: stop observing once visible
+                observer.unobserve(entry.target);
             }
         });
     }, {
