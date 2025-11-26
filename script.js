@@ -49,13 +49,17 @@ document.addEventListener('DOMContentLoaded', function() {
         education: [
             { icon: 'fas fa-graduation-cap', title: 'Data Science & Machine Learning', institution: 'Scaler Academy (2024 - Present)', text: 'Specializing in Python, SQL, and advanced analytics.' },
             { icon: 'fas fa-laptop-code', title: 'Full Stack Development Program', institution: 'NxtWave (2022 - 2023)', text: 'Focused on HTML, CSS, SQL, and Python for web and data applications.' },
-            { icon: 'fas fa-university', title: 'Bachelor of Arts', institution: 'Shalivahana Degree College (2019 - 2022)', text: 'Majors in History, Politics, and Philosophy, honing analytical and research skills.' }
+            { icon: 'fas fa-university', title: 'Bachelor of Arts', institution: 'Shalivahana Degree College (2019 - 2022)', text: 'Majors in History, Politics, and Philosophy, honing analytical and research skills.' },
+            { icon: 'fas fa-university', title: 'Diploma Agriculture Management', institution: 'GPSIOAM, Bangalore (2016 - 2017)', text: 'Completed hands-on training at GPS Institute, learning real-world agricultural production and marketing practices.' }
         ],
         certifications: [
+            'EDA Fundamentals',
+            'Python Libraries',
+            'Querying Data with SQL',
             'Programming Foundations with Python',
-            'SQL Fundamentals',
             'Introduction to Databases',
-            'Build Your Own Responsive Website'
+            'Build Your Own Responsive Website',
+            'Build Your Own Static Website'
         ],
         contact: {
             email: 'apkanisandeep00@outlook.com',
