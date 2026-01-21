@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { icon: 'fas fa-seedling', color: 'icon-tertiary', title: 'Unique Perspective', text: 'My background in agriculture provides a grounded, practical approach to data, allowing me to see patterns others might miss.' }
         ],
         apps: [
+             { icon: 'fas fa-file-excel', color: 'icon-primary', title: 'FR Excel formatter - Merger', text: 'This helps in de-duplicating and mapping of important deatils into excel.', appUrl: 'https://fragri.streamlit.app/', codeUrl: 'https://github.com/apkanisandeep01/FR_Agri.git' },
+            { icon: 'fas fa-file-excel', color: 'icon-primary', title: 'FR Excel De-Duplicator', text: 'This helps in de-duplicating excel, can allow for multiple excels at once.', appUrl: 'https://agrifrformatter.streamlit.app/', codeUrl: 'https://github.com/apkanisandeep01/FR_formatter.git' },
             { icon: 'fas fa-file-excel', color: 'icon-primary', title: 'Excel Repair & Export Assistant', text: 'Automated tool for repairing corrupted Excel files and streamlining data recovery.', appUrl: 'https://repairexcel.streamlit.app/', codeUrl: 'https://github.com/apkanisandeep01/Universal-Excel-Repair-tool.git' },
             { icon: 'fas fa-calculator', color: 'icon-secondary', title: 'Land Area Calculator', text: 'Precise land area calculations using GPS coordinates for agricultural needs.', appUrl: 'https://agriextentcalsi.streamlit.app/', codeUrl: 'https://github.com/apkanisandeep01/Agri-extent-calsi.git' },
             { icon: 'fab fa-python', color: 'icon-tertiary', title: 'Python-powered Excel', text: 'A comprehensive platform integrating Python scripts with Excel for advanced automation.', appUrl: 'https://excelwithpython.streamlit.app/', codeUrl: 'https://github.com/apkanisandeep01/Python-powered_Excel.git' },
@@ -50,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { icon: 'fas fa-graduation-cap', title: 'Data Science & Machine Learning', institution: 'Scaler Academy (2024 - Present)', text: 'Specializing in Python, SQL, and advanced analytics.' },
             { icon: 'fas fa-laptop-code', title: 'Full Stack Development Program', institution: 'NxtWave (2022 - 2023)', text: 'Focused on HTML, CSS, SQL, and Python for web and data applications.' },
             { icon: 'fas fa-university', title: 'Bachelor of Arts', institution: 'Shalivahana Degree College (2019 - 2022)', text: 'Majors in History, Politics, and Philosophy, honing analytical and research skills.' },
-            { icon: 'fas fa-university', title: 'Diploma Agriculture Management', institution: 'GPSIOAM, Bangalore (2016 - 2017)', text: 'Completed hands-on training at GPS Institute, learning real-world agricultural production and marketing practices.' }
+            { icon: 'fas fa-university', title: 'Diploma Agriculture Management', institution: 'GPSIOAM, Bangalore (2016 - 2017)', text: 'Completed hands-on training at GPS Institute, learning real-world agricultural production and marketing practices.' },
+            { icon: 'fas fa-university', title: 'Diploma Agriculture', institution: 'Sagar Agriculture Polytechnic, Chevella', text: 'Completed learning real-world agricultural production and marketing practices.' }
         ],
         certifications: [
             'EDA Fundamentals',
