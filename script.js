@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             typedText: ["Data Analyst", "Aspiring Data Scientist", "Python Developer", "Web Automation"],
             buttons: [
                 { type: 'primary', href: 'https://wa.me/918179607161', icon: 'fas fa-envelope', text: 'Get In Touch' },
-                { type: 'secondary', href: 'https://drive.google.com/file/d/18hAQKeiGVUib5modtU39gOsgnR6DjX0s/view?usp=sharing', icon: 'fas fa-download', text: 'Download Resume' }
+                { type: 'secondary', href: 'https://drive.google.com/file/d/1zlOROlEHzXYyhyLHTOH-65riNwRmwe7L/view?usp=sharing', icon: 'fas fa-download', text: 'Download Resume' }
             ]
         },
         whyMe: [
