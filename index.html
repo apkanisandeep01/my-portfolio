@@ -1,141 +1,1000 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep Kumar Apkani | Data Analyst Portfolio</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css?v=1.9">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sandeep Kumar Apkani — Data Analyst based in the UK. SQL, Python, Power BI. UK work-authorised via Young India Professionals Scheme. Open to junior DA roles." />
+  <meta name="keywords" content="Data Analyst UK, SQL Python Power BI, Junior Data Analyst London, Young India Professionals Scheme, Sandeep Kumar Apkani" />
+  <meta property="og:title" content="Sandeep Kumar Apkani | Data Analyst · UK" />
+  <meta property="og:description" content="Turning messy data into decisions that stick. 8+ years domain expertise, real-world SQL, Python & Power BI. UK work-authorised." />
+  <meta property="og:url" content="https://apkanisandeep01.github.io/my-portfolio/" />
+  <title>Sandeep Kumar Apkani | Data Analyst · UK</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- NAV + SMOOTH SCROLL -->
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* ── RESET / BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-bg:       #0d1117;
+      --c-surface:  #161b22;
+      --c-border:   #21262d;
+      --c-accent:   #00FF9D;
+      --c-accent2:  #7C3AED;
+      --c-text:     #e6edf3;
+      --c-muted:    #8b949e;
+      --c-warn:     #FFD60A;
+      --f-display:  'Space Grotesk', sans-serif;
+      --f-mono:     'JetBrains Mono', monospace;
+      --radius:     12px;
+      --transition: 0.25s ease;
+    }
+
+    body {
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: var(--f-display);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    .sk-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,17,23,0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      padding: 0 6rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sk-nav__logo {
+      font-family: var(--f-mono);
+      font-size: 0.9rem;
+      color: var(--c-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .sk-nav__links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .sk-nav__links a {
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      color: var(--c-muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color var(--transition);
+    }
+    .sk-nav__links a:hover { color: var(--c-accent); }
+    .sk-nav__cta {
+      background: var(--c-accent);
+      color: #000;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: var(--f-mono);
+      transition: background var(--transition);
+    }
+    .sk-nav__cta:hover { background: #00e08a; }
+
+    /* ── SHARED UTILITIES ── */
+    .sk-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition);
+      font-family: var(--f-display);
+      border: none;
+    }
+    .sk-btn--primary { background: var(--c-accent); color: #000; }
+    .sk-btn--primary:hover { background: #00e08a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,255,157,0.3); }
+    .sk-btn--ghost { background: transparent; color: var(--c-text); border: 1px solid var(--c-border); }
+    .sk-btn--ghost:hover { border-color: var(--c-accent); color: var(--c-accent); transform: translateY(-2px); }
+
+    .sk-section-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+    .sk-mono { font-family: var(--f-mono); font-size: 0.8rem; color: var(--c-accent); white-space: nowrap; }
+    .sk-divider { flex: 1; height: 1px; background: linear-gradient(90deg, var(--c-border), transparent); }
+    .sk-accent { color: var(--c-accent); }
+    .sk-section-h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .sk-section-sub { color: var(--c-muted); margin-bottom: 3rem; font-size: 1rem; }
+
+    .sk-dot {
+      width: 8px; height: 8px;
+      background: var(--c-accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--c-accent);
+      animation: pulse 2s infinite;
+      display: inline-block;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+    @keyframes fadeInUp {
+      from{opacity:0;transform:translateX(-50%) translateY(10px)}
+      to{opacity:1;transform:translateX(-50%) translateY(0)}
+    }
+
+    /* ── BANNER ── */
+    .sk-banner {
+      background: linear-gradient(90deg, var(--c-accent2) 0%, #4f46e5 100%);
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.5rem; padding: 0.55rem 1rem;
+      font-size: 0.8rem; font-family: var(--f-mono);
+      flex-wrap: wrap; text-align: center;
+      margin-top: 60px;
+    }
+    .sk-banner__badge {
+      background: rgba(255,255,255,0.18); border-radius: 20px;
+      padding: 0.2rem 0.75rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .sk-banner__text { opacity: 0.9; }
+
+    /* ── HERO ── */
+    .sk-hero {
+      min-height: calc(100vh - 60px);
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+    }
+    .sk-hero::before {
+      content:''; position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(0,255,157,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,157,0.04) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events:none;
+    }
+    .sk-hero__inner {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:3rem; padding:5rem 6rem 4rem; flex:1; position:relative; z-index:1;
+    }
+    .sk-hero__eyebrow {
+      display:flex; align-items:center; gap:0.5rem;
+      font-family:var(--f-mono); font-size:0.78rem; color:var(--c-accent);
+      letter-spacing:0.12em; text-transform:uppercase; margin-bottom:1.2rem;
+    }
+    .sk-hero__h1 {
+      font-size:clamp(2.2rem,4.5vw,3.8rem); font-weight:700;
+      line-height:1.12; letter-spacing:-0.03em; color:var(--c-text); margin-bottom:1.4rem;
+    }
+    .sk-hero__accent {
+      background:linear-gradient(90deg,var(--c-accent),#7C3AED);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .sk-hero__sub { font-size:1.05rem; color:var(--c-muted); margin-bottom:1rem; line-height:1.7; max-width:520px; }
+    .sk-hero__visa {
+      display:flex; align-items:center; gap:0.45rem;
+      font-family:var(--f-mono); font-size:0.75rem; color:var(--c-warn);
+      background:rgba(255,214,10,0.07); border:1px solid rgba(255,214,10,0.2);
+      border-radius:6px; padding:0.45rem 0.85rem; margin-bottom:2rem; width:fit-content;
+    }
+    .sk-hero__ctas { display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .sk-hero__socials { display:flex; gap:1.25rem; }
+    .sk-hero__socials a {
+      display:flex; align-items:center; gap:0.4rem;
+      color:var(--c-muted); text-decoration:none;
+      font-size:0.85rem; font-family:var(--f-mono); transition:color var(--transition);
+    }
+    .sk-hero__socials a:hover { color:var(--c-accent); }
+    .sk-hero__visual { display:flex; flex-direction:column; align-items:center; gap:2rem; flex-shrink:0; }
+    .sk-photo-frame { position:relative; width:300px; height:300px; }
+    .sk-photo-ring {
+      position:absolute; border-radius:50%; border:1px solid; animation:spin linear infinite;
+    }
+    .sk-photo-ring--1 { inset:-12px; border-color:rgba(0,255,157,0.25); animation-duration:12s; }
+    .sk-photo-ring--2 { inset:-24px; border-color:rgba(124,58,237,0.2); animation-duration:20s; animation-direction:reverse; }
+    .sk-photo {
+      width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:top center;
+      border:3px solid var(--c-accent); box-shadow:0 0 40px rgba(0,255,157,0.2);
+    }
+    .sk-photo-badge {
+      position:absolute; bottom:10px; right:-10px;
+      background:var(--c-surface); border:1px solid var(--c-border); border-radius:20px;
+      padding:0.3rem 0.75rem; font-size:0.75rem; font-weight:600;
+      display:flex; align-items:center; gap:0.35rem; box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    }
+    .sk-stats {
+      display:flex; gap:1.5rem; background:var(--c-surface);
+      border:1px solid var(--c-border); border-radius:var(--radius); padding:1.25rem 1.5rem;
+    }
+    .sk-stat { text-align:center; }
+    .sk-stat__num { display:block; font-size:2rem; font-weight:700; color:var(--c-accent); font-family:var(--f-mono); line-height:1; }
+    .sk-stat__plus { font-size:1.2rem; }
+    .sk-stat__label { font-size:0.7rem; color:var(--c-muted); line-height:1.4; margin-top:0.25rem; }
+    .sk-scroll-hint {
+      position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:0.3rem;
+      font-family:var(--f-mono); font-size:0.7rem; color:var(--c-muted);
+      animation:fadeInUp 1s 1s both;
+    }
+    .sk-scroll-arrow { animation:bounce 1.5s ease-in-out infinite; }
+
+    /* ── ABOUT ── */
+    .sk-about { padding:6rem 6rem; background:var(--c-bg); position:relative; }
+    .sk-about__inner { max-width:1200px; margin:0 auto; }
+    .sk-about__grid { display:grid; grid-template-columns:1fr 380px; gap:4rem; align-items:start; }
+    .sk-about__h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:700; line-height:1.25; margin-bottom:2rem; letter-spacing:-0.02em; }
+    .sk-about__body p { color:var(--c-muted); line-height:1.8; margin-bottom:1.2rem; font-size:1rem; }
+    .sk-about__body strong { color:var(--c-text); }
+    .sk-about__body em { color:var(--c-accent); font-style:normal; }
+    .sk-about__ctas { display:flex; gap:0.75rem; margin-top:2rem; flex-wrap:wrap; }
+    .sk-card { background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius); padding:1.5rem; margin-bottom:1rem; transition:border-color var(--transition); }
+    .sk-card:hover { border-color:var(--c-accent); }
+    .sk-card--highlight { border-color:rgba(124,58,237,0.4); background:linear-gradient(135deg,rgba(124,58,237,0.08),var(--c-surface)); }
+    .sk-card__title { font-size:0.85rem; font-family:var(--f-mono); color:var(--c-accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
+    .sk-card__flag { font-size:1.5rem; margin-bottom:0.5rem; }
+    .sk-card__body { font-size:0.88rem; color:var(--c-muted); line-height:1.7; }
+    .sk-card__body strong { color:var(--c-text); }
+    .sk-fact-list { list-style:none; display:flex; flex-direction:column; gap:0.85rem; }
+    .sk-fact-list li { display:flex; align-items:flex-start; gap:0.75rem; }
+    .sk-fact-icon { font-size:1rem; flex-shrink:0; margin-top:2px; }
+    .sk-fact-list strong { display:block; font-size:0.85rem; color:var(--c-text); }
+    .sk-fact-list span { font-size:0.78rem; color:var(--c-muted); }
+    .sk-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+    .sk-tag { background:rgba(0,255,157,0.07); border:1px solid rgba(0,255,157,0.2); color:var(--c-accent); border-radius:20px; padding:0.25rem 0.75rem; font-size:0.75rem; font-family:var(--f-mono); }
+
+    /* ── EXPERIENCE ── */
+    .sk-exp { padding:6rem 6rem; background:var(--c-surface); }
+    .sk-exp__inner { max-width:1000px; margin:0 auto; }
+    .sk-timeline { position:relative; padding-left:2rem; }
+    .sk-timeline::before { content:''; position:absolute; left:7px; top:8px; bottom:8px; width:1px; background:linear-gradient(to bottom,var(--c-accent),var(--c-accent2),transparent); }
+    .sk-timeline__item { position:relative; margin-bottom:2.5rem; }
+    .sk-timeline__dot { position:absolute; left:-2rem; top:1.2rem; width:14px; height:14px; border-radius:50%; background:var(--c-border); border:2px solid var(--c-accent); z-index:1; }
+    .sk-timeline__dot--active { background:var(--c-accent); box-shadow:0 0 10px rgba(0,255,157,0.5); }
+    .sk-timeline__card { background:var(--c-bg); border:1px solid var(--c-border); border-radius:var(--radius); padding:1.75rem; transition:border-color var(--transition),transform var(--transition); }
+    .sk-timeline__card:hover { border-color:rgba(0,255,157,0.4); transform:translateX(4px); }
+    .sk-timeline__card--active { border-color:rgba(0,255,157,0.3); background:linear-gradient(135deg,rgba(0,255,157,0.03),var(--c-bg)); }
+    .sk-exp__header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.25rem; gap:1rem; flex-wrap:wrap; }
+    .sk-exp__company { font-family:var(--f-mono); font-size:0.75rem; color:var(--c-accent); text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:0.25rem; }
+    .sk-exp__role { font-size:1.15rem; font-weight:600; color:var(--c-text); margin-bottom:0.3rem; }
+    .sk-exp__meta { font-size:0.78rem; color:var(--c-muted); }
+    .sk-exp__badge { background:var(--c-surface); border:1px solid var(--c-border); border-radius:20px; padding:0.25rem 0.75rem; font-size:0.72rem; font-family:var(--f-mono); color:var(--c-muted); white-space:nowrap; flex-shrink:0; }
+    .sk-exp__badge--green { border-color:rgba(0,255,157,0.4); color:var(--c-accent); background:rgba(0,255,157,0.07); }
+    .sk-exp__badge--purple { border-color:rgba(124,58,237,0.4); color:#a78bfa; background:rgba(124,58,237,0.07); }
+    .sk-exp__bullets { list-style:none; margin-bottom:1.25rem; display:flex; flex-direction:column; gap:0.85rem; }
+    .sk-exp__bullets li { display:flex; align-items:flex-start; gap:0.6rem; font-size:0.9rem; color:var(--c-muted); line-height:1.6; }
+    .sk-exp__bullets strong { color:var(--c-text); }
+    .sk-bullet-icon { flex-shrink:0; font-size:0.95rem; }
+    .sk-exp__skills { display:flex; flex-wrap:wrap; gap:0.4rem; padding-top:1rem; border-top:1px solid var(--c-border); }
+    .sk-exp__skills span { background:rgba(0,255,157,0.06); border:1px solid rgba(0,255,157,0.15); color:var(--c-accent); font-size:0.72rem; font-family:var(--f-mono); padding:0.2rem 0.6rem; border-radius:4px; }
+
+    /* ── SKILLS ── */
+    .sk-skills { padding:6rem 6rem; background:var(--c-bg); }
+    .sk-skills__inner { max-width:1100px; margin:0 auto; }
+    .sk-skills__featured { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:2.5rem; }
+    .sk-skill-feat { background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius); padding:1.5rem; transition:border-color var(--transition); }
+    .sk-skill-feat:hover { border-color:var(--c-accent); }
+    .sk-skill-feat__icon { font-size:1.75rem; margin-bottom:0.75rem; }
+    .sk-skill-feat h3 { font-size:1.05rem; font-weight:600; margin-bottom:0.5rem; }
+    .sk-skill-feat p { font-size:0.82rem; color:var(--c-muted); margin-bottom:1rem; line-height:1.5; }
+    .sk-skill-feat__bar { height:4px; background:var(--c-border); border-radius:2px; margin-bottom:0.5rem; overflow:hidden; }
+    .sk-skill-feat__fill { height:100%; background:linear-gradient(90deg,var(--c-accent),var(--c-accent2)); border-radius:2px; transition:width 1s ease; }
+    .sk-skill-feat__level { font-family:var(--f-mono); font-size:0.7rem; color:var(--c-accent); }
+    .sk-skills__grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; }
+    .sk-skill-item { display:flex; align-items:center; gap:0.85rem; padding:1rem 1.25rem; background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius); transition:border-color var(--transition),transform var(--transition); }
+    .sk-skill-item:hover { border-color:rgba(0,255,157,0.4); transform:translateX(4px); }
+    .sk-skill-item__icon { font-size:1.25rem; flex-shrink:0; }
+    .sk-skill-item__body { flex:1; }
+    .sk-skill-item__body strong { display:block; font-size:0.9rem; font-weight:600; margin-bottom:0.15rem; }
+    .sk-skill-item__body span { font-size:0.78rem; color:var(--c-muted); }
+    .sk-skill-item__badge { font-size:0.65rem; font-family:var(--f-mono); color:var(--c-warn); white-space:nowrap; }
+
+    /* ── PROJECTS ── */
+    .sk-projects { padding:6rem 6rem; background:var(--c-surface); }
+    .sk-projects__inner { max-width:1200px; margin:0 auto; }
+    .sk-proj-tabs { display:flex; gap:0.5rem; margin-bottom:2rem; flex-wrap:wrap; }
+    .sk-proj-tab { padding:0.45rem 1.1rem; border-radius:20px; border:1px solid var(--c-border); background:transparent; color:var(--c-muted); font-size:0.8rem; font-family:var(--f-mono); cursor:pointer; transition:all var(--transition); }
+    .sk-proj-tab--active,.sk-proj-tab:hover { border-color:var(--c-accent); color:var(--c-accent); background:rgba(0,255,157,0.07); }
+    .sk-proj-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:2.5rem; }
+    .sk-proj-card { background:var(--c-bg); border:1px solid var(--c-border); border-radius:var(--radius); padding:1.5rem; display:flex; flex-direction:column; gap:0.75rem; position:relative; transition:border-color var(--transition),transform var(--transition); cursor:pointer; }
+    .sk-proj-card:hover { border-color:rgba(0,255,157,0.4); transform:translateY(-4px); box-shadow:0 12px 30px rgba(0,0,0,0.4); }
+    .sk-proj-card--featured { border-color:rgba(0,255,157,0.3); background:linear-gradient(135deg,rgba(0,255,157,0.04),var(--c-bg)); }
+    .sk-proj-card__featured-badge { position:absolute; top:-10px; right:1rem; background:linear-gradient(90deg,var(--c-accent2),var(--c-accent)); color:#000; font-size:0.65rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:10px; }
+    .sk-proj-card__header { display:flex; justify-content:space-between; align-items:flex-start; }
+    .sk-proj-card__logo { font-size:1.75rem; }
+    .sk-proj-card__tags { display:flex; flex-wrap:wrap; gap:0.35rem; justify-content:flex-end; }
+    .sk-proj-card__tags span { background:rgba(124,58,237,0.1); border:1px solid rgba(124,58,237,0.3); color:#a78bfa; font-size:0.65rem; padding:0.15rem 0.5rem; border-radius:3px; font-family:var(--f-mono); }
+    .sk-proj-card__title { font-size:1rem; font-weight:600; line-height:1.3; }
+    .sk-proj-card__desc { font-size:0.82rem; color:var(--c-muted); line-height:1.6; flex:1; }
+    .sk-proj-card__metrics { display:flex; gap:1rem; padding:0.75rem 0; border-top:1px solid var(--c-border); border-bottom:1px solid var(--c-border); }
+    .sk-metric { text-align:center; }
+    .sk-metric span { display:block; font-family:var(--f-mono); font-size:0.85rem; font-weight:600; color:var(--c-accent); }
+    .sk-metric small { font-size:0.65rem; color:var(--c-muted); }
+    .sk-proj-card__footer { display:flex; gap:0.5rem; flex-wrap:wrap; }
+    .sk-proj-link { display:inline-flex; align-items:center; gap:0.35rem; padding:0.35rem 0.85rem; border-radius:6px; font-size:0.75rem; font-family:var(--f-mono); text-decoration:none; transition:all var(--transition); }
+    .sk-proj-link--gh { background:var(--c-surface); color:var(--c-muted); border:1px solid var(--c-border); }
+    .sk-proj-link--gh:hover { border-color:var(--c-accent); color:var(--c-accent); }
+    .sk-proj-link--live { background:rgba(0,255,157,0.1); color:var(--c-accent); border:1px solid rgba(0,255,157,0.3); }
+    .sk-proj-link--live:hover { background:rgba(0,255,157,0.2); }
+    .sk-projects__cta { text-align:center; }
+    .sk-proj-card.hidden { display:none; }
+
+    /* ── EDUCATION ── */
+    .sk-edu { padding:6rem 6rem; background:var(--c-bg); }
+    .sk-edu__inner { max-width:1200px; margin:0 auto; }
+    .sk-edu__grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+    .sk-edu__card { background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius); padding:1.75rem; transition:border-color var(--transition); }
+    .sk-edu__card:hover { border-color:rgba(0,255,157,0.3); }
+    .sk-edu__card--current { border-color:rgba(0,255,157,0.25); background:linear-gradient(135deg,rgba(0,255,157,0.04),var(--c-surface)); grid-column:1 / -1; }
+    .sk-edu__card--certs { grid-column:1 / -1; }
+    .sk-edu__card-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    .sk-edu__icon { font-size:1.75rem; }
+    .sk-edu__badge { font-family:var(--f-mono); font-size:0.68rem; padding:0.2rem 0.65rem; border-radius:20px; border:1px solid var(--c-border); color:var(--c-muted); background:var(--c-bg); }
+    .sk-edu__badge--active { border-color:rgba(0,255,157,0.4); color:var(--c-accent); background:rgba(0,255,157,0.07); }
+    .sk-edu__badge--ongoing { border-color:rgba(255,214,10,0.4); color:var(--c-warn); background:rgba(255,214,10,0.05); }
+    .sk-edu__inst { font-family:var(--f-mono); font-size:0.72rem; color:var(--c-accent); text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+    .sk-edu__prog { font-size:1.05rem; font-weight:600; margin-bottom:0.3rem; }
+    .sk-edu__period { font-size:0.78rem; color:var(--c-muted); margin-bottom:0.85rem; }
+    .sk-edu__bio { font-size:0.87rem; color:var(--c-muted); line-height:1.7; margin-bottom:1.25rem; }
+    .sk-edu__skills-title { display:block; font-family:var(--f-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--c-muted); margin-bottom:0.65rem; }
+    .sk-edu__skill-pills { display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .sk-edu__skill-pills span { background:rgba(124,58,237,0.1); border:1px solid rgba(124,58,237,0.25); color:#a78bfa; font-size:0.72rem; padding:0.2rem 0.6rem; border-radius:4px; font-family:var(--f-mono); }
+    .sk-certs-list { display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem; }
+    .sk-cert-item { display:flex; flex-direction:column; gap:0.1rem; padding:0.75rem; background:var(--c-bg); border-radius:8px; border:1px solid var(--c-border); }
+    .sk-cert-org { font-size:0.75rem; color:var(--c-accent); font-family:var(--f-mono); }
+    .sk-cert-name { font-size:0.87rem; color:var(--c-text); }
+
+    /* ── LIVE APPS ── */
+    .sk-apps { padding:6rem 6rem; background:var(--c-surface); }
+    .sk-apps__inner { max-width:1200px; margin:0 auto; }
+    .sk-apps__head { display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; margin-bottom:2rem; flex-wrap:wrap; }
+    .sk-apps__status { display:flex; align-items:center; gap:0.5rem; }
+    .sk-apps__grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:1.25rem; }
+    .sk-app-card { background:var(--c-bg); border:1px solid var(--c-border); border-radius:var(--radius); padding:1.75rem; display:flex; flex-direction:column; gap:1rem; position:relative; overflow:hidden; transition:border-color var(--transition),transform var(--transition); }
+    .sk-app-card:hover { border-color:rgba(0,255,157,0.3); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.4); }
+    .sk-app-card--primary { border-color:rgba(0,255,157,0.2); background:linear-gradient(135deg,rgba(0,255,157,0.04),var(--c-bg)); }
+    .sk-app-card__glow { position:absolute; top:-40px; right:-40px; width:150px; height:150px; background:radial-gradient(circle,rgba(0,255,157,0.12) 0%,transparent 70%); pointer-events:none; }
+    .sk-app-card__header { display:flex; justify-content:space-between; align-items:center; }
+    .sk-app-card__icon { font-size:1.75rem; }
+    .sk-app-card__meta { text-align:right; }
+    .sk-app-card__platform { display:block; font-family:var(--f-mono); font-size:0.68rem; color:var(--c-muted); }
+    .sk-app-card__status { font-size:0.72rem; color:var(--c-accent); font-family:var(--f-mono); }
+    .sk-app-card__title { font-size:1.1rem; font-weight:600; }
+    .sk-app-card__summary { font-size:0.85rem; color:var(--c-muted); line-height:1.6; flex:1; }
+    .sk-app-card__features { list-style:none; display:flex; flex-direction:column; gap:0.4rem; }
+    .sk-app-card__features li { font-size:0.8rem; color:var(--c-muted); }
+    .sk-app-card__footer { display:flex; gap:0.6rem; flex-wrap:wrap; padding-top:0.5rem; border-top:1px solid var(--c-border); }
+
+    /* ── CONTACT ── */
+    .sk-contact { padding:6rem 6rem; background:var(--c-bg); position:relative; }
+    .sk-contact::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 20% 50%,rgba(124,58,237,0.06) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(0,255,157,0.04) 0%,transparent 50%); pointer-events:none; }
+    .sk-contact__inner { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
+    .sk-contact__grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+    .sk-contact__h2 { font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:700; line-height:1.2; letter-spacing:-0.02em; margin-bottom:1rem; }
+    .sk-contact__sub { color:var(--c-muted); font-size:0.95rem; line-height:1.7; margin-bottom:2rem; }
+    .sk-contact__channels { display:flex; flex-direction:column; gap:0.75rem; margin-bottom:2rem; }
+    .sk-channel { display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius); text-decoration:none; color:var(--c-text); transition:all var(--transition); }
+    .sk-channel:hover { transform:translateX(6px); }
+    .sk-channel--email:hover { border-color:rgba(0,255,157,0.4); background:rgba(0,255,157,0.04); }
+    .sk-channel--linkedin:hover { border-color:rgba(10,102,194,0.5); background:rgba(10,102,194,0.05); }
+    .sk-channel--github:hover { border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.03); }
+    .sk-channel--cv:hover { border-color:rgba(255,214,10,0.4); background:rgba(255,214,10,0.04); }
+    .sk-channel__icon { width:40px; height:40px; border-radius:10px; background:var(--c-bg); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--c-accent); }
+    .sk-channel--linkedin .sk-channel__icon { color:#0A66C2; }
+    .sk-channel--cv .sk-channel__icon { color:var(--c-warn); }
+    .sk-channel__body { flex:1; }
+    .sk-channel__body strong { display:block; font-size:0.9rem; font-weight:600; }
+    .sk-channel__body span { display:block; font-size:0.78rem; color:var(--c-muted); }
+    .sk-channel__body small { font-size:0.68rem; color:var(--c-muted); opacity:0.7; }
+    .sk-channel__arrow { color:var(--c-muted); font-size:1rem; }
+    .sk-avail-card { display:flex; align-items:flex-start; gap:1rem; padding:1.25rem; background:rgba(0,255,157,0.05); border:1px solid rgba(0,255,157,0.2); border-radius:var(--radius); }
+    .sk-avail-dot { width:12px; height:12px; border-radius:50%; background:var(--c-accent); box-shadow:0 0 8px var(--c-accent); flex-shrink:0; margin-top:4px; animation:pulse 2s infinite; }
+    .sk-avail-card strong { display:block; font-size:0.9rem; margin-bottom:0.3rem; }
+    .sk-avail-card p { font-size:0.83rem; color:var(--c-muted); margin-bottom:0.35rem; }
+    .sk-avail-visa { font-family:var(--f-mono); font-size:0.72rem!important; color:var(--c-warn)!important; }
+    .sk-form-card { background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius); padding:2rem; }
+    .sk-form-card__title { font-size:1.15rem; font-weight:600; margin-bottom:0.4rem; }
+    .sk-form-card__hint { font-size:0.8rem; color:var(--c-muted); margin-bottom:1.75rem; }
+    .sk-form { display:flex; flex-direction:column; gap:1.1rem; }
+    .sk-form__row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .sk-form__group { display:flex; flex-direction:column; gap:0.4rem; }
+    .sk-form__label { font-size:0.78rem; font-family:var(--f-mono); color:var(--c-muted); text-transform:uppercase; letter-spacing:0.06em; }
+    .sk-form__label span { color:var(--c-accent); }
+    .sk-form__input { background:var(--c-bg); border:1px solid var(--c-border); border-radius:8px; color:var(--c-text); font-family:var(--f-display); font-size:0.9rem; padding:0.7rem 1rem; outline:none; transition:border-color var(--transition); width:100%; -webkit-appearance:none; }
+    .sk-form__input:focus { border-color:var(--c-accent); }
+    .sk-form__input::placeholder { color:var(--c-muted); opacity:0.6; }
+    .sk-form__textarea { resize:vertical; min-height:130px; }
+    select.sk-form__input { cursor:pointer; }
+    select.sk-form__input option { background:var(--c-surface); color:var(--c-text); }
+    .sk-form__submit { width:100%; justify-content:center; padding:0.9rem; }
+    .sk-form__feedback { padding:0.85rem 1rem; border-radius:8px; font-size:0.85rem; }
+    .sk-form__feedback--success { background:rgba(0,255,157,0.08); border:1px solid rgba(0,255,157,0.3); color:var(--c-accent); }
+    .sk-form__feedback--error { background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.3); color:#f87171; }
+
+    /* ── FOOTER ── */
+    .sk-footer { background:var(--c-surface); border-top:1px solid var(--c-border); padding:2.5rem 6rem; }
+    .sk-footer__inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; }
+    .sk-footer__brand { display:flex; flex-direction:column; gap:0.2rem; }
+    .sk-footer__name { font-weight:600; font-size:0.95rem; }
+    .sk-footer__title { font-size:0.75rem; color:var(--c-accent); font-family:var(--f-mono); }
+    .sk-footer__links { display:flex; gap:1.5rem; }
+    .sk-footer__links a { color:var(--c-muted); text-decoration:none; font-size:0.85rem; transition:color var(--transition); }
+    .sk-footer__links a:hover { color:var(--c-accent); }
+    .sk-footer__copy { font-size:0.72rem; color:var(--c-muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .sk-nav { padding: 0 1.5rem; }
+      .sk-nav__links { display: none; }
+      .sk-hero__inner { flex-direction:column-reverse; padding:3rem 1.5rem 2rem; text-align:center; }
+      .sk-hero__sub,.sk-hero__visa { max-width:100%; }
+      .sk-hero__ctas,.sk-hero__socials { justify-content:center; }
+      .sk-photo-frame { width:200px; height:200px; }
+      .sk-banner { font-size:0.72rem; gap:0.5rem; }
+      .sk-stats { gap:1rem; padding:1rem; }
+      .sk-about { padding:4rem 1.5rem; }
+      .sk-about__grid { grid-template-columns:1fr; gap:2rem; }
+      .sk-exp { padding:4rem 1.5rem; }
+      .sk-timeline { padding-left:1.5rem; }
+      .sk-skills,.sk-projects { padding:4rem 1.5rem; }
+      .sk-skills__featured { grid-template-columns:1fr; }
+      .sk-skills__grid { grid-template-columns:1fr; }
+      .sk-proj-grid { grid-template-columns:1fr; }
+      .sk-edu { padding:4rem 1.5rem; }
+      .sk-edu__grid { grid-template-columns:1fr; }
+      .sk-edu__card--current,.sk-edu__card--certs { grid-column:1; }
+      .sk-apps { padding:4rem 1.5rem; }
+      .sk-apps__grid { grid-template-columns:1fr; }
+      .sk-contact { padding:4rem 1.5rem; }
+      .sk-contact__grid { grid-template-columns:1fr; gap:2.5rem; }
+      .sk-form__row { grid-template-columns:1fr; }
+      .sk-footer { padding:2rem 1.5rem; }
+      .sk-footer__inner { flex-direction:column; align-items:flex-start; gap:1rem; }
+      .sk-footer__links { flex-wrap:wrap; gap:1rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <nav class="container">
-            <a href="#home" class="logo">SANDEEP KUMAR APKANI</a>
-            <ul class="nav-links" id="nav-links-container">
-                <!-- Nav links will be injected here by JavaScript -->
-            </ul>
-            <button class="hamburger" id="hamburger-button" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </header>
+  <!-- ── NAV ── -->
+  <nav class="sk-nav">
+    <a href="#home" class="sk-nav__logo">sandeep.apkani<span style="color:var(--c-muted)">_</span></a>
+    <ul class="sk-nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#live-apps">Apps</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://docs.google.com/document/d/1Z-TsQ2SqhLzHpwA0USlmv_h540AyYVtt0nNqpZzF-kU/edit?usp=sharing" target='new' class="sk-nav__cta" download>↓ CV</a>
+  </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <img src="profile.jpg" alt="Apkani Sandeep Kumar" class="profile-pic" id="profile-pic">
-                <h1 class="hero-h1" id="hero-name"></h1>
-                <h2 class="hero-h2">
-                    <span id="typed-text"></span><span class="typed-cursor">|</span>
-                </h2>
-                <p class="hero-p" id="hero-tagline"></p>
-                <div class="hero-buttons" id="hero-buttons-container">
-                    <!-- Hero buttons will be injected here by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="why-me" class="section-light fade-in-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Why Hire Me?</h2>
-                    <p>I offer a unique blend of analytical rigor and practical, real-world problem-solving skills.</p>
-                </div>
-                <div class="why-me-grid" id="why-me-grid">
-                    <!-- 'Why Me?' cards will be injected here by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="apps" class="section-light fade-in-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Live Applications Showcase</h2>
-                    <p>I build practical tools. Explore these interactive Streamlit apps that solve real-world problems.</p>
-                </div>
-                <div class="project-grid" id="apps-grid">
-                    <!-- App cards will be injected here by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section-white fade-in-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Featured Projects</h2>
-                    <p>A selection of projects demonstrating my ability to extract and visualize insights from complex datasets.</p>
-                </div>
-                <div class="project-grid" id="projects-grid">
-                    <!-- Project cards will be injected here by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="journey" class="section-dark fade-in-section">
-            <div class="container">
-                 <div class="section-header">
-                    <h2 class="text-white">My Professional Journey</h2>
-                    <p class="text-gray-400">I carry the silence of sunrise in fields, and the spark of algorithms by night.</p>
-                </div>
-                <div class="timeline" id="timeline-container">
-                    <!-- Timeline items will be injected here by JavaScript -->
-                </div>
-            </div>
-        </section>
-        
-        <section id="education" class="section-white fade-in-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Education & Certifications</h2>
-                    <p>My commitment to continuous learning in the ever-evolving world of data.</p>
-                </div>
-                <div class="education-grid" id="education-grid">
-                    <!-- Education and Certs will be injected here by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section-light fade-in-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Let's Connect</h2>
-                    <p>Have a project in mind or an opportunity to discuss? I'd love to hear from you.</p>
-                </div>
-                <div class="contact-direct" id="contact-container">
-                    <!-- Contact info will be injected here by JavaScript -->
-                </div>
-                
-                <!-- Embedded Google Form -->
-                <div class="contact-form-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd4Yi9w8q0iJ-II_QruuiYORojz0fmbKoWPMkzttLHijldmkA/viewform?embedded=true" width="100%" height="686" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
-
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Sandeep Kumar Apkani. All rights reserved.</p>
-            <p>Built with passion and modern web technologies.</p>
+  <!-- ── SECTION 1: HERO ── -->
+  <section id="home" class="sk-hero">
+    <div class="sk-banner">
+      <span class="sk-banner__badge">🇬🇧 UK-Based · Young India Professionals Scheme</span>
+      <span class="sk-banner__text">Available for full-time Data Analyst roles · London &amp; Remote</span>
+    </div>
+    <div class="sk-hero__inner">
+      <div class="sk-hero__copy">
+        <p class="sk-hero__eyebrow"><span class="sk-dot"></span> Data Analyst · SQL · Python · Power BI</p>
+        <h1 class="sk-hero__h1">Turning messy data into<br /><span class="sk-hero__accent">decisions that stick.</span></h1>
+        <p class="sk-hero__sub">Former Government Data Officer (India) → UK Data Analyst.<br />I bring 8+ years of domain expertise in Agriculture, real-world SQL, Python &amp; Power BI skills,and a track record of building tools that people actually use.</p>
+        <p class="sk-hero__visa">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          UK work-authorised · Young India Professionals Scheme · No sponsorship required
+        </p>
+        <div class="sk-hero__ctas">
+          <a href="#projects" class="sk-btn sk-btn--primary">View My Work</a>
+          <a href="https://docs.google.com/document/d/1Z-TsQ2SqhLzHpwA0USlmv_h540AyYVtt0nNqpZzF-kU/edit?usp=sharing" target="new"class="sk-btn sk-btn--ghost" download>Download CV</a>
+          <a href="#contact" class="sk-btn sk-btn--ghost">Let's Talk</a>
         </div>
-    </footer>
-    
-    <div class="nav-overlay"></div>
+        <div class="sk-hero__socials">
+          <a href="www.linkedin.com/in/sandeep-data-analyst-uk" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/apkanisandeep01" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="mailto:apkanisandeep00@outlook.com">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+      <div class="sk-hero__visual">
+        <div class="sk-photo-frame">
+          <div class="sk-photo-ring sk-photo-ring--1"></div>
+          <div class="sk-photo-ring sk-photo-ring--2"></div>
+          <img src="profile.jpg" alt="Sandeep Kumar Apkani – Aspiring Data Analyst based in the UK" class="sk-photo" loading="eager" />
+          <div class="sk-photo-badge"><span>🇬🇧</span> UK Available</div>
+        </div>
+        <div class="sk-stats">
+          <div class="sk-stat"><span class="sk-stat__num">8<span class="sk-stat__plus">+</span></span><span class="sk-stat__label">Years in Data<br />&amp; Operations</span></div>
+          <div class="sk-stat"><span class="sk-stat__num">5<span class="sk-stat__plus">+</span></span><span class="sk-stat__label">Live Projects<br />on GitHub</span></div>
+          <div class="sk-stat"><span class="sk-stat__num">7</span><span class="sk-stat__label">Streamlit Apps<br />Deployed</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="sk-scroll-hint" aria-hidden="true"><span>Scroll to explore</span><div class="sk-scroll-arrow">↓</div></div>
+  </section>
 
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+  <!-- ── SECTION 3: ABOUT ── -->
+  <section id="about" class="sk-about">
+    <div class="sk-about__inner">
+      <div class="sk-section-label"><span class="sk-mono">// about_me</span><div class="sk-divider"></div></div>
+      <div class="sk-about__grid">
+        <div class="sk-about__story">
+          <h2 class="sk-about__h2">I didn't start with a keyboard.<br /><span class="sk-accent">I started with Microsoft Excel and a broken system.</span></h2>
+          <div class="sk-about__body">
+            <p>For 8 years I worked as an Agriculture Extension Officer for the Government of Telangana, managing data for over <strong>50,000+  farmers</strong> across Vikarabad District. Every morning started with Excel sheets, paper forms, and the question: <em>"Why is this taking so long?"</em></p>
+            <p>So I started automating. I built Python tools to update farmer databases, automated government portal workflows with Selenium, and created data pipelines that saved my department hours every week. Nobody asked me to. I just couldn't stand inefficiency.</p>
+            <p>That drive brought me to the UK on the <strong>Young India Professionals Scheme</strong> — a competitive visa programme that selects professionals committed to building careers in Britain. I'm fully work-authorised, UK-based, and ready to contribute from day one.</p>
+            <p>I'm now enrolled in <strong>Scaler Academy's Data Science &amp; Machine Learning programme</strong>, sharpening my SQL, Python, Tableau and Power BI skills with a portfolio built around real datasets — from Walmart Black Friday sales patterns to UK Reatil price trends.</p>
+            <p>What makes me different isn't just the technical toolkit. It's that I've sat on the other side of the data — I've been the end user who needed the insight, not just the person who built the dashboard. That context makes my analysis <em>actually useful</em>.</p>
+          </div>
+          <div class="sk-about__ctas">
+            <a href="https://docs.google.com/document/d/1Z-TsQ2SqhLzHpwA0USlmv_h540AyYVtt0nNqpZzF-kU/edit?usp=sharing" target="_blank"                                                                                                                                                             class="sk-btn sk-btn--primary" download>↓ Download My CV</a>
+            <a href="#contact" class="sk-btn sk-btn--ghost">Let's Have a Chat →</a>
+          </div>
+        </div>
+        <div class="sk-about__facts">
+          <div class="sk-card">
+            <h3 class="sk-card__title">Quick Facts</h3>
+            <ul class="sk-fact-list">
+              <li><span class="sk-fact-icon">📍</span><div><strong>Based in UK</strong><span>Young India Professionals Scheme · No sponsorship needed</span></div></li>
+              <li><span class="sk-fact-icon">🎯</span><div><strong>Looking For</strong><span>Data Analyst roles / Data Scientist · United Kigndom &amp; Remote</span></div></li>
+              <li><span class="sk-fact-icon">🛠️</span><div><strong>Core Stack</strong><span>SQL · Python · Power BI · Excel · Tableau</span></div></li>
+              <li><span class="sk-fact-icon">📚</span><div><strong>Currently Learning</strong><span>Woolf University · Msc in Artificial Intelligence &amp; Machine Learning Programme</span></div></li>
+              <li><span class="sk-fact-icon">⚡</span><div><strong>Availability</strong><span>Immediate · Open to interviews now</span></div></li>
+            </ul>
+          </div>
+          <div class="sk-card">
+            <h3 class="sk-card__title">What I Bring</h3>
+            <div class="sk-tags">
+              <span class="sk-tag">Domain Expertise</span><span class="sk-tag">Self-starter</span><span class="sk-tag">Automation mindset</span><span class="sk-tag">Stakeholder comms</span><span class="sk-tag">Government data</span><span class="sk-tag">Python scripting</span><span class="sk-tag">SQL querying</span><span class="sk-tag">Dashboard design</span>
+            </div>
+          </div>
+          <div class="sk-card sk-card--highlight">
+            <div class="sk-card__flag">🇬🇧</div>
+            <h3 class="sk-card__title">UK Work Rights</h3>
+            <p class="sk-card__body">I hold a <strong>Young India Professionals Scheme visa</strong> — a UK Government programme. I am fully authorised to work in the UK with <strong>two years</strong> of work permission, extendable. No sponsorship required. No waiting period.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: EXPERIENCE ── -->
+  <section id="experience" class="sk-exp">
+    <div class="sk-exp__inner">
+      <div class="sk-section-label"><span class="sk-mono">// experience</span><div class="sk-divider"></div></div>
+      <h2 class="sk-section-h2">Professional Journey</h2>
+      <p class="sk-section-sub">Every role has sharpened a different data muscle. Here's what I built and what it delivered.</p>
+      <div class="sk-timeline">
+        <div class="sk-timeline__item">
+          <div class="sk-timeline__dot"></div>
+          <div class="sk-timeline__card">
+            <div class="sk-exp__header">
+              <div class="sk-exp__left"><span class="sk-exp__company">Government of Telangana · Department of Agriculture</span><h3 class="sk-exp__role">Agriculture Extension Officer (AEO)</h3><span class="sk-exp__meta">📍 Vikarabad District, India &nbsp;|&nbsp; 2018 – 2026 · 8 Years</span></div>
+              <div class="sk-exp__badge">Full-time · Govt.</div>
+            </div>
+            <ul class="sk-exp__bullets">
+              <li><span class="sk-bullet-icon">📊</span>Managed and quality-checked agricultural data for 50,000+ farmers across Vikarabad District, reducing data entry errors by identifying recurring discrepancies through Python-assisted validation scripts.</li>
+              <li><span class="sk-bullet-icon">⚡</span>Built a Selenium-based automation tool (Rythu Bharosa Mobile Number Updation Tool and Farmers Registratation in State Seed portal) to update farmer records on the state agriculture portal — cutting a process that took days down to hours, with zero manual re-entry errors.</li>
+              <li><span class="sk-bullet-icon">🌾</span>Led a district-level campaign for the National Mission on Natural Farming and Crop Data Collection — coordinated data collection, verified scheme eligibility for hundreds of applicants, and reported metrics directly to senior district officials.</li>
+              <li><span class="sk-bullet-icon">📋</span>Managed  and  maintained  structured  agricultural  datasets  for  a  1 Lakh -acres including  crop  type, acreage, sowing patterns, and harvest records; ensured accurate digital uploads across government MIS portals.</li>
+            </ul>
+            <div class="sk-exp__skills"><span>Python</span><span>Selenium</span><span>Excel</span><span>MySQL</span><span>Data Validation</span><span>Stakeholder Reporting</span></div>
+          </div>
+        </div>
+        <div class="sk-timeline__item">
+          <div class="sk-timeline__dot sk-timeline__dot--active"></div>
+          <div class="sk-timeline__card sk-timeline__card--active">
+            <div class="sk-exp__header">
+              <div class="sk-exp__left"><span class="sk-exp__company">Independent · UK-Based</span><h3 class="sk-exp__role">Data Analyst (Portfolio Projects)</h3><span class="sk-exp__meta">📍 United Kingdom &nbsp;|&nbsp; 🗓 2023 – Present · Active</span></div>
+              <div class="sk-exp__badge sk-exp__badge--green">Current</div>
+            </div>
+            <ul class="sk-exp__bullets">
+              <li><span class="sk-bullet-icon">🛒</span>Analysed <strong>537,000+ Walmart Black Friday transactions</strong> using Python and Pandas to identify purchasing patterns across age groups, gender, and city tiers — delivered a structured EDA report with actionable retail insights.</li>
+              <li><span class="sk-bullet-icon">📦</span>Performed end-to-end <strong>feature engineering on Delhivery logistics data</strong> — cleaned, merged, and transformed raw delivery records to surface route-level efficiency gaps.</li>
+              <li><span class="sk-bullet-icon">🎬</span>Built a <strong>Netflix Streaming Trends dashboard</strong> using Python + Seaborn, identifying content release patterns and genre growth trends across regions over a multi-year window.</li>
+              <li><span class="sk-bullet-icon">🛠️</span>Developed and deployed a <strong>production-ready Excel Toolkit Streamlit app</strong> — 5 data tools in one interface with a dark UI and zero-install browser access.</li>
+            </ul>
+            <div class="sk-exp__skills"><span>SQL</span><span>Python</span><span>Pandas</span><span>Streamlit</span><span>Power BI</span><span>EDA</span><span>Feature Engineering</span><span>Data Storytelling</span></div>
+          </div>
+        </div>
+        <div class="sk-timeline__item">
+          <div class="sk-timeline__dot"></div>
+          <div class="sk-timeline__card">
+            <div class="sk-exp__header">
+              <div class="sk-exp__left"><span class="sk-exp__company">Scaler Academy</span><h3 class="sk-exp__role">Data Science &amp; Machine Learning Programme</h3><span class="sk-exp__meta">📍 Online · 🗓 2023 – Present · In Progress</span></div>
+              <div class="sk-exp__badge sk-exp__badge--purple">Studying</div>
+            </div>
+            <ul class="sk-exp__bullets">
+              <li><span class="sk-bullet-icon">📐</span>Completing structured curriculum covering <strong>SQL (advanced queries, window functions), Python for data analysis, statistics, machine learning fundamentals</strong>, and business case studies.</li>
+              <li><span class="sk-bullet-icon">🏠</span>Built a <strong>house price prediction model</strong> using linear regression — full pipeline from data cleaning to model evaluation, with an interactive HTML explainer for non-technical audiences.</li>
+            </ul>
+            <div class="sk-exp__skills"><span>Advanced SQL</span><span>Statistics</span><span>ML Fundamentals</span><span>Scikit-learn</span><span>Regression Models</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: SKILLS ── -->
+  <section id="skills" class="sk-skills">
+    <div class="sk-skills__inner">
+      <div class="sk-section-label"><span class="sk-mono">// skills_stack</span><div class="sk-divider"></div></div>
+      <h2 class="sk-section-h2">Technical Skills</h2>
+      <p class="sk-section-sub">Top skills I actively use in projects — not just listed, but proven.</p>
+      <div class="sk-skills__featured">
+        <div class="sk-skill-feat"><div class="sk-skill-feat__icon">🗃️</div><h3>SQL</h3><p>JOINs, CTEs, window functions, subqueries. Used in EDA and business insight projects.</p><div class="sk-skill-feat__bar"><div class="sk-skill-feat__fill" style="width:85%"></div></div><span class="sk-skill-feat__level">Advanced</span></div>
+        <div class="sk-skill-feat"><div class="sk-skill-feat__icon">🐍</div><h3>Python</h3><p>Pandas, NumPy, Matplotlib, Seaborn, Streamlit, Selenium — across 8+ projects.</p><div class="sk-skill-feat__bar"><div class="sk-skill-feat__fill" style="width:80%"></div></div><span class="sk-skill-feat__level">Advanced</span></div>
+        <div class="sk-skill-feat"><div class="sk-skill-feat__icon">📊</div><h3>Power BI / Tableau</h3><p>Dashboard design, DAX measures, slicers, and data model design for business reporting.</p><div class="sk-skill-feat__bar"><div class="sk-skill-feat__fill" style="width:70%"></div></div><span class="sk-skill-feat__level">Intermediate</span></div>
+      </div>
+      <div class="sk-skills__grid">
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">📊</span><div class="sk-skill-item__body"><strong>Data Analysis &amp; EDA</strong><span>Exploratory analysis, pattern detection, hypothesis testing</span></div><span class="sk-skill-item__badge">⭐ Pin 1</span></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">🗃️</span><div class="sk-skill-item__body"><strong>SQL (MySQL · PostgreSQL)</strong><span>Complex queries, window functions, data modelling</span></div><span class="sk-skill-item__badge">⭐ Pin 2</span></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">🐍</span><div class="sk-skill-item__body"><strong>Python (Pandas · NumPy · Scikit-learn)</strong><span>Data wrangling, visualisation, ML pipelines</span></div><span class="sk-skill-item__badge">⭐ Pin 3</span></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">📈</span><div class="sk-skill-item__body"><strong>Power BI &amp; Tableau</strong><span>Interactive dashboards, DAX, business reporting</span></div></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">🟢</span><div class="sk-skill-item__body"><strong>Microsoft Excel (Advanced)</strong><span>Pivot tables, VLOOKUP, Power Query, macros</span></div></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">🚀</span><div class="sk-skill-item__body"><strong>Streamlit</strong><span>Deployed interactive data apps for end-users</span></div></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">🤖</span><div class="sk-skill-item__body"><strong>Machine Learning</strong><span>Regression, classification, model evaluation</span></div></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">🐙</span><div class="sk-skill-item__body"><strong>Git &amp; GitHub</strong><span>Version control, portfolio management, collaboration</span></div></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">📐</span><div class="sk-skill-item__body"><strong>Statistics &amp; Probability</strong><span>Descriptive stats, distributions, A/B testing concepts</span></div></div>
+        <div class="sk-skill-item"><span class="sk-skill-item__icon">🗣️</span><div class="sk-skill-item__body"><strong>Data Storytelling</strong><span>Translating complex findings into plain-language insights</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 6: PROJECTS ── -->
+  <section id="projects" class="sk-projects">
+    <div class="sk-projects__inner">
+      <div class="sk-section-label"><span class="sk-mono">// featured_projects</span><div class="sk-divider"></div></div>
+      <h2 class="sk-section-h2">Featured Projects</h2>
+      <p class="sk-section-sub">Real datasets. Real questions. Real code. Click any card to explore.</p>
+      <div class="sk-proj-tabs" role="tablist">
+        <button class="sk-proj-tab sk-proj-tab--active" data-filter="all">All</button>
+        <button class="sk-proj-tab" data-filter="python">Python</button>
+        <button class="sk-proj-tab" data-filter="sql">SQL</button>
+        <button class="sk-proj-tab" data-filter="streamlit">Streamlit</button>
+        <button class="sk-proj-tab" data-filter="eda">EDA</button>
+      </div>
+      
+      <div class="sk-proj-grid" id="projGrid">
+        <article class="sk-proj-card sk-proj-card--featured" data-tags="python streamlit">
+          <div class="sk-proj-card__featured-badge">⭐ Featured</div>
+          <div class="sk-proj-card__header"><div class="sk-proj-card__logo">🧰</div><div class="sk-proj-card__tags"><span>Python</span><span>Streamlit</span><span>Excel</span></div></div>
+          <h3 class="sk-proj-card__title">Excel Toolkit — Streamlit App</h3>
+          <p class="sk-proj-card__desc">5-in-1 production data tool: CSV merger, duplicate cleaner, formatter, pivot generator, chart builder. Dark UI with purple glow effects. Zero-install, browser-based.</p>
+          <div class="sk-proj-card__metrics"><div class="sk-metric"><span>5</span><small>tools</small></div><div class="sk-metric"><span>Live</span><small>deployed</small></div><div class="sk-metric"><span>Dark UI</span><small>design</small></div></div>
+          <div class="sk-proj-card__footer">
+            <a href="https://github.com/apkanisandeep01/Excel-tools-powered-by-Python.git" target="_blank" rel="noopener" class="sk-proj-link sk-proj-link--gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub</a>
+            <a href="https://excelwithpython.streamlit.app/" class="sk-proj-link sk-proj-link--live">↗ Live App</a>
+          </div>
+        </article>
+        <article class="sk-proj-card" data-tags="python eda">
+          <div class="sk-proj-card__header"><div class="sk-proj-card__logo">🛒</div><div class="sk-proj-card__tags"><span>MySQL</span><span>EDA</span></div></div>
+          <h3 class="sk-proj-card__title">UK-Retail-SQL-business-analysis</h3>
+          <p class="sk-proj-card__desc">Analysed 5,00,000+ transactions to uncover purchasing patterns by Country. Generated £10.67 million in total revenue. Processed 20,726 customer orders. Seasonal trends influence sales performance and customer demand/p>
+          <div class="sk-proj-card__metrics"><div class="sk-metric"><span>500K+</span><small>records</small></div><div class="sk-metric"><span>8</span><small>insights</small></div><div class="sk-metric"><span>EDA</span><small>type</small></div></div>
+          <div class="sk-proj-card__footer"><a href="https://github.com/apkanisandeep01/Walmart-BlackFriday-Analysis.git" target="_blank" rel="noopener" class="sk-proj-link sk-proj-link--gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub</a></div>
+        </article>
+        <article class="sk-proj-card" data-tags="python eda">
+          <div class="sk-proj-card__header"><div class="sk-proj-card__logo">🎬</div><div class="sk-proj-card__tags"><span>Python</span><span>Pandas</span><span>EDA</span><span>Seaborn</span><span>Matplotlib</span></div></div>
+          <h3 class="sk-proj-card__title">Netflix Streaming Trends</h3>
+          <p class="sk-proj-card__desc">Mapped content release trends across genres and regions. Surfaced that drama and documentary content grew 3× faster post-2017, supporting content strategy decisions.</p>
+          <div class="sk-proj-card__metrics"><div class="sk-metric"><span>8K+</span><small>titles</small></div><div class="sk-metric"><span>Multi-year</span><small>analysis</small></div><div class="sk-metric"><span>Viz</span><small>type</small></div></div>
+          <div class="sk-proj-card__footer"><a href="https://github.com/apkanisandeep01/Streaming-Trends-Netflix-Content-Insights.git" target="_blank" rel="noopener" class="sk-proj-link sk-proj-link--gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub</a></div>
+        </article>
+        <article class="sk-proj-card" data-tags="python eda">
+          <div class="sk-proj-card__header"><div class="sk-proj-card__logo">📦</div><div class="sk-proj-card__tags"><span>Python</span><span>EDA</span><span>Feature Engineering</span></div></div>
+          <h3 class="sk-proj-card__title">Delhivery Logistics Feature Engineering</h3>
+          <p class="sk-proj-card__desc">Cleaned and engineered features from raw logistics delivery data. Identified route-level delivery time anomalies that flagged a 12% inefficiency in a key delivery corridor.</p>
+          <div class="sk-proj-card__metrics"><div class="sk-metric"><span>FE</span><small>focus</small></div><div class="sk-metric"><span>12%</span><small>gap found</small></div><div class="sk-metric"><span>Logistics</span><small>domain</small></div></div>
+          <div class="sk-proj-card__footer"><a href="https://github.com/apkanisandeep01/Delhivery-Logistics-Data-Analysis-and-Feature-Engineering.git" target="_blank" rel="noopener" class="sk-proj-link sk-proj-link--gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub</a></div>
+        </article>
+        <article class="sk-proj-card" data-tags="python eda">
+          <div class="sk-proj-card__header"><div class="sk-proj-card__logo">🏃</div><div class="sk-proj-card__tags"><span>Python</span><span>Statistics</span><span>EDA</span></div></div>
+          <h3 class="sk-proj-card__title">Aerofit Treadmill Customer Profiling</h3>
+          <p class="sk-proj-card__desc">Profiled treadmill buyers across 3 product lines using descriptive statistics and probability analysis. Built a customer persona framework to guide marketing targeting.</p>
+          <div class="sk-proj-card__metrics"><div class="sk-metric"><span>3</span><small>products</small></div><div class="sk-metric"><span>Stats</span><small>method</small></div><div class="sk-metric"><span>Marketing</span><small>outcome</small></div></div>
+          <div class="sk-proj-card__footer"><a href="https://github.com/apkanisandeep01/-Aerofit-Treadmill-Customer-Analysis.git" target="_blank" rel="noopener" class="sk-proj-link sk-proj-link--gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub</a></div>
+        </article>
+        
+      </div>
+      <div class="sk-projects__cta"><a href="https://github.com/apkanisandeep01" target="_blank" rel="noopener" class="sk-btn sk-btn--ghost">View All Projects on GitHub →</a></div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 7: EDUCATION ── -->
+  <section id="education" class="sk-edu">
+    <div class="sk-edu__inner">
+      <div class="sk-section-label"><span class="sk-mono">// education</span><div class="sk-divider"></div></div>
+      <h2 class="sk-section-h2">Education &amp; Learning Path</h2>
+      <p class="sk-section-sub">Structured learning + self-taught practice. Every line below maps to a real skill I use.</p>
+      <div class="sk-edu__grid">
+        <div class="sk-edu__card sk-edu__card--current">
+          <div class="sk-edu__card-top"><div class="sk-edu__icon">🎓</div><div class="sk-edu__badge sk-edu__badge--active">In Progress</div></div>
+          <span class="sk-edu__inst">Scaler Neovarsity, a full constituent college of Woolf </span>
+          <h3 class="sk-edu__prog">Master of Science in Computer Science: Artificial Intelligence and Machine Learning </h3>
+          <p class="sk-edu__period">📅 2023 – Present</p>
+          <p class="sk-edu__bio">Industry-led programme with a curriculum built around real business problems. Covers the full data workflow: cleaning → analysis → modelling → storytelling. Assignments are graded on code quality and insight quality, not just correctness.</p>
+          <div class="sk-edu__skills-gained"><span class="sk-edu__skills-title">Skills Gained</span><div class="sk-edu__skill-pills"><span>SQL (Advanced)</span><span>Python for Data</span><span>Pandas &amp; NumPy</span><span>Statistics</span><span>Machine Learning</span><span>Scikit-learn</span><span>EDA Methodology</span><span>Feature Engineering</span><span>Model Evaluation</span></div></div>
+        </div>
+        <div class="sk-edu__card">
+          <div class="sk-edu__card-top"><div class="sk-edu__icon">🏛️</div><div class="sk-edu__badge">Completed</div></div>
+          <span class="sk-edu__inst">Sri Kakatiya University / Telangana</span>
+          <h3 class="sk-edu__prog">Bachelor of Arts</h3>
+          <p class="sk-edu__period">📅 2019 – 2023</p>
+          <p class="sk-edu__bio">3-year undergraduate degree covering Policy Making,History, goverence and administration. Forms the domain knowledge foundation for rural development, and public sector analytics roles.</p>
+          <div class="sk-edu__skills-gained"><span class="sk-edu__skills-title">Skills Gained</span><div class="sk-edu__skill-pills"><span>Domain Expertise</span><span>Data Collection</span><span>Report Writing</span><span>Fieldwork Methods</span><span>Government Operations</span><span>Soil &amp; Crop Analysis</span></div></div>
+        </div>
+        <div class="sk-edu__card">
+          <div class="sk-edu__card-top"><div class="sk-edu__icon">💻</div><div class="sk-edu__badge sk-edu__badge--ongoing">Ongoing</div></div>
+          <span class="sk-edu__inst">Self-Directed Learning · YouTube · Docs · Projects</span>
+          <h3 class="sk-edu__prog">Python, SQL &amp; Data Tools (Self-Taught)</h3>
+          <p class="sk-edu__period">📅 2020 – Present</p>
+          <p class="sk-edu__bio">Taught myself Python, SQL, Streamlit, Selenium, and Power BI through real projects with real stakes — automating government workflows, building farmer databases, and creating deployed tools used by colleagues. No sandbox environment. Real systems, real data.</p>
+          <div class="sk-edu__skills-gained"><span class="sk-edu__skills-title">Skills Gained</span><div class="sk-edu__skill-pills"><span>Python</span><span>SQL</span><span>Flask</span><span>Streamlit</span><span>Selenium Automation</span><span>Power BI</span><span>Excel (Advanced)</span><span>MySQL</span><span>Git &amp; GitHub</span></div></div>
+        </div>
+        <div class="sk-edu__card sk-edu__card--certs">
+          <div class="sk-edu__card-top"><div class="sk-edu__icon">🏅</div><div class="sk-edu__badge">Earned</div></div>
+          <span class="sk-edu__inst">Certifications</span>
+          <h3 class="sk-edu__prog">Professional Development Certificates</h3>
+          <div class="sk-certs-list">
+            <div class="sk-cert-item"><span class="sk-cert-org">📌 Scaler Academy</span><span class="sk-cert-name">Completed certifications and coursework covering SQL, Data Analytics & Visualisation Fundamentals, Python Libraries for Data Analytics, Probability & Statistics, Tableau, Excel, Product Analytics, Mathematics for Machine Learning, Supervised Machine Learning Algorithms, Prompt Engineering and AI Prototyping — still Course Ongoing</span></div>
+            <div class="sk-cert-item"><span class="sk-cert-org">📌 Govt. of Telangana</span><span class="sk-cert-name">Meritorious service award in Jan -2026</span></div>
+            <div class="sk-cert-item"><span class="sk-cert-org">📌 Govt. of Telangana</span><span class="sk-cert-name">Meritorious service award in Jan -2020</span></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 8: LIVE APPS ── -->
+  <section id="live-apps" class="sk-apps">
+    <div class="sk-apps__inner">
+      <div class="sk-section-label"><span class="sk-mono">// live_apps</span><div class="sk-divider"></div></div>
+      <div class="sk-apps__head">
+        <div><h2 class="sk-section-h2">Live Applications</h2><p class="sk-section-sub">Not just notebooks — deployed tools that real people can open and use right now.</p></div>
+        <div class="sk-apps__status"><span class="sk-dot"></span><span class="sk-mono" style="font-size:0.75rem;color:var(--c-accent)">All apps live</span></div>
+      </div>
+      <div class="sk-apps__grid">
+        <!-- APPS:START -->
+        <div class="sk-app-card sk-app-card--primary">
+          <div class="sk-app-card__glow"></div>
+          <div class="sk-app-card__header"><div class="sk-app-card__icon">🧰</div><div class="sk-app-card__meta"><span class="sk-app-card__platform">Streamlit · Python</span><span class="sk-app-card__status">🟢 Live</span></div></div>
+          <h3 class="sk-app-card__title">Excel Toolkit Pro</h3>
+          <p class="sk-app-card__summary">5 data tools in one browser app. Merge CSVs, remove duplicates, format data, generate pivot tables, and build charts — all without installing anything.</p>
+          <ul class="sk-app-card__features"><li>✅ CSV Merger — combine multiple files instantly</li><li>✅ Duplicate Remover — smart column-level deduplication</li><li>✅ Data Formatter — standardise column types &amp; headers</li><li>✅ Pivot Generator — drag-drop pivot in seconds</li><li>✅ Chart Builder — bar, line, scatter, pie output</li></ul>
+          <div class="sk-app-card__footer"><a href="https://excelwithpython.streamlit.app/" target="_blank" rel="noopener" class="sk-btn sk-btn--primary">↗ Launch App</a><a href="https://github.com/apkanisandeep01/Excel-tools-powered-by-Python.git" target="_blank" rel="noopener" class="sk-btn sk-btn--ghost">View Source</a></div>
+        </div>
+        <div class="sk-app-card">
+          <div class="sk-app-card__header"><div class="sk-app-card__icon">🏠</div><div class="sk-app-card__meta"><span class="sk-app-card__platform">Python · ML · Streamlit</span><span class="sk-app-card__status">🟢 Live</span></div></div>
+          <h3 class="sk-app-card__title">Farmer Registery Formatter</h3>
+          <p class="sk-app-card__summary">This helps the department employee to upload the raw excel files, download the merged, depulicated excel for download (Department use only).</p>
+          <ul class="sk-app-card__features"><li>✅ Interactive sliders for inputs</li><li>✅ Merging </li><li>✅ Deduplication</li></ul>
+          <div class="sk-app-card__footer"><a href="https://github.com/apkanisandeep01/FR_Agri.git" target="_blank" rel="noopener" class="sk-btn sk-btn--primary">↗ Launch App</a><a href="https://fragri.streamlit.app/" target="_blank" rel="noopener" class="sk-btn sk-btn--ghost">View Source</a></div>
+        </div>
+        
+        <!-- APPS:END -->
+      </div>
+      <div class="sk-projects__cta"><a href="https://share.streamlit.io/user/apkanisandeep01" target="_blank" rel="noopener" class="sk-btn sk-btn--ghost">View All Live Apps on Streamlit →</a></div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 9: CONTACT ── -->
+  <section id="contact" class="sk-contact">
+    <div class="sk-contact__inner">
+      <div class="sk-section-label"><span class="sk-mono">// contact</span><div class="sk-divider"></div></div>
+      <div class="sk-contact__grid">
+        <div class="sk-contact__left">
+          <h2 class="sk-contact__h2">Let's build something<br /><span class="sk-accent">worth talking about.</span></h2>
+          <p class="sk-contact__sub">I'm actively looking for Junior / Entry-level Data Analyst roles in the UK. If you're a recruiter, hiring manager, or just want to nerd out about data — my inbox is open.</p>
+          <div class="sk-contact__channels">
+            <a href="mailto:apkanisandeep00@outlook.com" class="sk-channel sk-channel--email">
+              <div class="sk-channel__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg></div>
+              <div class="sk-channel__body"><strong>Email</strong><span>apkanisandeep00@outlook.com</span><small>Fastest response · Usually reply within 24hrs</small></div>
+              <div class="sk-channel__arrow">→</div>
+            </a>
+            <a href="www.linkedin.com/in/sandeep-data-analyst-uk" target="_blank" rel="noopener" class="sk-channel sk-channel--linkedin">
+              <div class="sk-channel__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+              <div class="sk-channel__body"><strong>LinkedIn</strong><span>linkedin.com/in/apkanisandeepkumar</span><small>Connect · Message · Endorse a skill</small></div>
+              <div class="sk-channel__arrow">→</div>
+            </a>
+            <a href="https://github.com/apkanisandeep01" target="_blank" rel="noopener" class="sk-channel sk-channel--github">
+              <div class="sk-channel__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
+              <div class="sk-channel__body"><strong>GitHub</strong><span>github.com/apkanisandeep01</span><small>Browse all my projects &amp; source code</small></div>
+              <div class="sk-channel__arrow">→</div>
+            </a>
+            <a href="https://docs.google.com/document/d/1Z-TsQ2SqhLzHpwA0USlmv_h540AyYVtt0nNqpZzF-kU/edit?usp=sharing" target="_blank" download class="sk-channel sk-channel--cv">
+              <div class="sk-channel__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+              <div class="sk-channel__body"><strong>Download CV</strong><span>Sandeep_Kumar_Apkani_CV.pdf</span><small>ATS-optimised · UK format · Updated 2025</small></div>
+              <div class="sk-channel__arrow">↓</div>
+            </a>
+          </div>
+          <div class="sk-avail-card">
+            <div class="sk-avail-dot"></div>
+            <div>
+              <strong>Currently Available</strong>
+              <p>Open to full-time roles, contract work, and freelance data projects in the UK.</p>
+              <p class="sk-avail-visa">🇬🇧 Young India Professionals Scheme · No sponsorship required · 2-year work authorisation</p>
+            </div>
+          </div>
+        </div>
+        <div class="sk-contact__right">
+          <div class="sk-form-card">
+            <h3 class="sk-form-card__title">Send a Quick Message</h3>
+            <p class="sk-form-card__hint">This sends directly to my email. No sign-up, no spam filters, no nonsense.</p>
+            <!-- REPLACE YOUR_FORMSPREE_ID — sign up free at formspree.io -->
+            <form id="contactForm" class="sk-form" action="https://formspree.io/f/xkoaagrb" method="POST">
+              <div class="sk-form__row">
+                <div class="sk-form__group"><label for="cf-name" class="sk-form__label">Your Name <span>*</span></label><input type="text" id="cf-name" name="name" placeholder="Jane Smith" required class="sk-form__input" /></div>
+                <div class="sk-form__group"><label for="cf-email" class="sk-form__label">Email Address <span>*</span></label><input type="email" id="cf-email" name="email" placeholder="jane@company.co.uk" required class="sk-form__input" /></div>
+              </div>
+              <div class="sk-form__group">
+                <label for="cf-subject" class="sk-form__label">Subject</label>
+                <select id="cf-subject" name="subject" class="sk-form__input"><option value="">Select a reason...</option><option value="job-opportunity">Job Opportunity</option><option value="contract-work">Contract / Freelance Work</option><option value="collaboration">Project Collaboration</option><option value="feedback">Portfolio Feedback</option><option value="other">Other</option></select>
+              </div>
+              <div class="sk-form__group"><label for="cf-message" class="sk-form__label">Message <span>*</span></label><textarea id="cf-message" name="message" rows="5" placeholder="Hi Sandeep, I came across your portfolio and..." required class="sk-form__input sk-form__textarea"></textarea></div>
+              <input type="text" name="_gotcha" style="display:none" />
+              <button type="submit" class="sk-btn sk-btn--primary sk-form__submit" id="cfSubmit"><span id="cfBtnText">Send Message →</span><span id="cfSpinner" style="display:none">Sending...</span></button>
+              <div id="cfSuccess" class="sk-form__feedback sk-form__feedback--success" style="display:none">✅ Message sent! I'll get back to you within 24 hours.</div>
+              <div id="cfError" class="sk-form__feedback sk-form__feedback--error" style="display:none">⚠️ Something went wrong. Please email me directly at apkanisandeep00@outlook.com</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="sk-footer">
+    <div class="sk-footer__inner">
+      <div class="sk-footer__brand"><span class="sk-footer__name">Sandeep Kumar Apkani</span><span class="sk-footer__title">Data Analyst · UK-Based · Work Authorised</span></div>
+      <div class="sk-footer__links"><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#live-apps">Apps</a><a href="#contact">Contact</a></div>
+      <div class="sk-footer__copy">© 2026 Sandeep Kumar Apkani · Built with HTML, CSS &amp; JS · Hosted on GitHub Pages</div>
+    </div>
+  </footer>
+
+  <!-- ── ALL JAVASCRIPT ── -->
+  <script>
+  (function () {
+    'use strict';
+
+    // 1. HERO entrance animation
+    document.addEventListener('DOMContentLoaded', function () {
+      var items = document.querySelectorAll('.sk-hero__eyebrow,.sk-hero__h1,.sk-hero__sub,.sk-hero__visa,.sk-hero__ctas,.sk-hero__socials');
+      items.forEach(function (el, i) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease,transform 0.5s ease';
+        setTimeout(function () { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 150 + i * 100);
+      });
+    });
+
+    // 2. Scroll fade-in observer
+    var fadeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; fadeObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.sk-card,.sk-about__story,.sk-edu__card,.sk-app-card,.sk-skill-feat').forEach(function (el, i) {
+      el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.55s ease ' + (i * 0.05) + 's,transform 0.55s ease ' + (i * 0.05) + 's';
+      fadeObserver.observe(el);
+    });
+
+    // 3. Timeline slide-in
+    var tlObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateX(0)'; tlObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.sk-timeline__item').forEach(function (el, i) {
+      el.style.opacity = '0'; el.style.transform = 'translateX(-20px)';
+      el.style.transition = 'opacity 0.5s ease ' + (i * 0.12) + 's,transform 0.5s ease ' + (i * 0.12) + 's';
+      tlObserver.observe(el);
+    });
+
+    // 4. Channel slide-in
+    var chObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateX(0)'; chObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.sk-channel').forEach(function (el, i) {
+      el.style.opacity = '0'; el.style.transform = 'translateX(-16px)';
+      el.style.transition = 'opacity 0.4s ease ' + (i * 0.08) + 's,transform 0.4s ease ' + (i * 0.08) + 's,border-color 0.25s ease,background 0.25s ease';
+      chObserver.observe(el);
+    });
+
+    // 5. Skill bar animation
+    var barObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.sk-skill-feat__fill').forEach(function (bar) {
+            var w = bar.style.width; bar.style.width = '0';
+            setTimeout(function () { bar.style.width = w; }, 100);
+          });
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    var sf = document.querySelector('.sk-skills__featured');
+    if (sf) barObserver.observe(sf);
+
+    // 6. Project filter tabs
+    var tabs = document.querySelectorAll('.sk-proj-tab');
+    var cards = document.querySelectorAll('.sk-proj-card');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('sk-proj-tab--active'); });
+        tab.classList.add('sk-proj-tab--active');
+        var filter = tab.getAttribute('data-filter');
+        cards.forEach(function (card) {
+          if (filter === 'all') { card.classList.remove('hidden'); }
+          else { var tags = (card.getAttribute('data-tags') || '').split(' '); tags.indexOf(filter) > -1 ? card.classList.remove('hidden') : card.classList.add('hidden'); }
+        });
+      });
+    });
+
+    // 7. Nav active highlight on scroll
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.sk-nav__links a');
+    window.addEventListener('scroll', function () {
+      var pos = window.scrollY + 80;
+      sections.forEach(function (sec) {
+        if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
+          navLinks.forEach(function (a) {
+            a.style.color = a.getAttribute('href') === '#' + sec.id ? 'var(--c-accent)' : '';
+          });
+        }
+      });
+    }, { passive: true });
+
+    // 8. Contact form AJAX submit
+    var form    = document.getElementById('contactForm');
+    var btnText = document.getElementById('cfBtnText');
+    var spinner = document.getElementById('cfSpinner');
+    var success = document.getElementById('cfSuccess');
+    var error   = document.getElementById('cfError');
+    var submit  = document.getElementById('cfSubmit');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btnText.style.display = 'none'; spinner.style.display = 'inline'; submit.disabled = true;
+        success.style.display = 'none'; error.style.display = 'none';
+        fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+          .then(function (r) { if (r.ok) { success.style.display = 'block'; form.reset(); } else { throw new Error(); } })
+          .catch(function () { error.style.display = 'block'; })
+          .finally(function () { btnText.style.display = 'inline'; spinner.style.display = 'none'; submit.disabled = false; });
+      });
+    }
+
+  })();
+  </script>
+
 </body>
 </html>
